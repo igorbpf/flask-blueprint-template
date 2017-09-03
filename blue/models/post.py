@@ -1,5 +1,6 @@
 from . import db
 from .base import Base
+from .user import User
 
 class Post(Base):
 
@@ -9,7 +10,8 @@ class Post(Base):
     title = db.Column(db.String(60))
     text = db.Column(db.Text)
 
-    #user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
     def __init__(self, title, text):
         self.title = title

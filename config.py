@@ -13,9 +13,15 @@ class Config(object):
 class LocalConfig(Config):
     DEBUG = True
     DEVELOPMENT = True
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///./local.db'
-    # BROKER_URL = os.environ['REDIS_URL']
-    # CELERY_RESULT_BACKEND = os.environ['REDIS_URL']
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///../local.db'
+    BROKER_URL = os.environ['REDIS_URL']
+    CELERY_RESULT_BACKEND = os.environ['REDIS_URL']
+    MAIL_SERVER = 'smtp.googlemail.com'
+    MAIL_PORT =  587
+    MAIL_USE_TLS = True
+    MAIL_USERNAME = os.environ['MAIL_USERNAME'] # 'igorppsan@gmail.com'
+    MAIL_PASSWORD = os.environ['MAIL_PASSWORD'] # 'macacovelhoeikebatista'
+    MAIL_DEFAULT_SENDER = os.environ['MAIL_DEFAULT_SENDER'] # 'flask@example.com'
 
 
 class DevelopmentConfig(Config):

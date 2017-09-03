@@ -1,3 +1,3 @@
-from blue import app 
+from blue import manager
 
-app.run()
+manager.run()

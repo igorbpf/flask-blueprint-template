@@ -1,23 +1,24 @@
 {% extends "layout.html" %}
-
 {% block body %}
-
-<form method="POST" action="/">
-    {{ form.csrf_token }}
-    {{ form.title.label }}
-    {{ form.title(size=20) }}
-    <br>
-    {{ form.post.label }}
-    {{ form.post(size=20) }}
-    <input type="submit" value="Go">
-    {% if posts %}
-      {% for pos in posts %}
-        {{ pos.title }}
-        {{ pos.text }}
-        {{ pos.date_created }}
-        <br>
+<div id="main" class="container">
+    <h2>All Items</h2>
+    <table class="table table-hover">
+      <tr>
+        <th>#
+        <th>Title
+        <th>Date
+        <th>Text
+      {% for post in posts %}
+      <tr class={{ "success" if todo.done }}>
+        <td><a href="/todos/{{ todo.id }}">{{ post.id }}</a>
+        <td style={{ "text-decoration:line-through" if todo.done }}>{{ post.title }}
+        <td>{{ post.date_created }}
+        <td>{{ todo.text }}</td>
       {% endfor %}
-    {% endif %}
-</form>
+    </table>
+    <p>
+      <a href="{{ url_for('new') }}" class="btn btn-large btn-primary">New Post</a>
 
+
+</div>
 {% endblock %}
