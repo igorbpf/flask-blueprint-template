@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class="row">
+  <div class="col-md-12">
+
+    {% for sell in sells %}
+      {{ sell }}
+    {% endfor %}
+    <br>
+    {% for buy in buys %}
+      {{ buy }}
+    {% endfor %}
+
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Crypto</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/sandstone/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-G3G7OsJCbOk1USkOY4RfeX1z27YaWrZ1YuaQ5tbuawed9IoreRDpWpTkZLXQfPm3" crossorigin="anonymous">
+    <link rel="shortcut icon" href="{{ url_for('site.static', filename='img/pyfin.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('site.static', filename='css/layout.css') }}">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('site.static', filename='js/script.js') }}"></script>
+  </head>
+
+  <body>
+    <div id="main-wrapper">
+      {% include 'includes/_navbar.html' %}
+
+
+      <div class="container content">
+        {% include 'includes/_messages.html' %}
+        {% block body %}{% endblock %}
+      </div>
+
+      {% include 'includes/_footer.html' %}
+    </div>
+  </body>
+
+</html>
